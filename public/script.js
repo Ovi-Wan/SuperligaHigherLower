@@ -5,6 +5,7 @@ let score = 0;
 let highScore = localStorage.getItem("highScore") || 0;
 let isFirstRound = true;
 let usedNames = [];
+let inputLocked = false;
 
 const startScreen = document.getElementById("start-screen");
 const gameScreen = document.getElementById("game-screen");
@@ -66,6 +67,8 @@ function transitionScreens(fromScreen, toScreen, callback) {
 }
 
 function pickPlayers() {
+  inputLocked = false;
+
   if (isFirstRound) {
     currentLeft = getUniquePlayer();
   } else {
@@ -118,7 +121,8 @@ document.getElementById("img-left").addEventListener("click", () => checkAnswer(
 document.getElementById("img-right").addEventListener("click", () => checkAnswer("right"));
 
 function checkAnswer(choice) {
-  if (!currentLeft || !currentRight) return;
+  if (inputLocked || !currentLeft || !currentRight) return;
+  inputLocked = true;
 
   const correct =
     (choice === "left" && currentLeft.goals >= currentRight.goals) ||
@@ -198,7 +202,7 @@ function animateCounter(el, target, onComplete) {
 
 document.getElementById("copy-btn").addEventListener("click", () => {
   const finalScore = document.getElementById("final-score").textContent;
-  const message = `Scorul meu pe Superliga Higher or Lower este: ${finalScore}\nTe provoc și pe tine 👉 https://superligahigherlower.ro`;
+  const message = `Scorul meu pe Superliga Higher or Lower este: ${finalScore}\nTe provoc și pe tine 👉 https://superligahigherlower.onrender.com`;
 
   navigator.clipboard.writeText(message).then(() => {
     alert("Link copiat în clipboard! 📋");
@@ -209,7 +213,7 @@ document.getElementById("copy-btn").addEventListener("click", () => {
 
 document.getElementById("whatsapp-share").addEventListener("click", () => {
   const score = document.getElementById("final-score").textContent;
-  const text = encodeURIComponent(`Scorul meu pe Superliga Higher or Lower este: ${score}\nTe provoc și pe tine 👉 https://superligahigherlower.ro`);
+  const text = encodeURIComponent(`Scorul meu pe Superliga Higher or Lower este: ${score}\nTe provoc și pe tine 👉 https://superligahigherlower.onrender.com`);
   document.getElementById("whatsapp-share").href = `https://wa.me/?text=${text}`;
 });
 
@@ -219,7 +223,7 @@ document.getElementById("instagram-share").addEventListener("click", () => {
 
 document.getElementById("facebook-share").addEventListener("click", () => {
   const score = document.getElementById("final-score").textContent;
-  const url = encodeURIComponent("https://superligahigherlower.ro");
+  const url = encodeURIComponent("https://superligahigherlower.onrender.com");
   const quote = encodeURIComponent(`Scorul meu pe Superliga Higher or Lower este: ${score}\nTe provoc și pe tine!`);
   document.getElementById("facebook-share").href = `https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${quote}`;
 });

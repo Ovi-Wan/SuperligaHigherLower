@@ -1,3 +1,11 @@
+/* Blochează selecția textului pe toate browserele */
+body, * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
 /* Fundal stadion blurat */
 body {
   margin: 0;
@@ -255,15 +263,25 @@ body::before {
   }
 }
 
-/* Responsive */
+/* Responsive pentru mobil */
 @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    overflow-y: auto;
+  }
+
   .game-layout {
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     gap: 30px;
+    height: auto;
+    padding: 20px 0;
   }
 
   .player-side {
-    width: 80%;
+    width: 90%;
+    max-width: 320px;
   }
 
   .player-side img {
@@ -271,7 +289,59 @@ body::before {
     height: auto;
   }
 
+  .player-side h2 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  #goals-left {
+    font-size: 1em;
+    text-align: center;
+  }
+
   .center-bar {
     width: 90%;
+    padding: 16px;
+    margin-top: 20px;
+  }
+
+  .or-circle {
+    top: -30px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.2em;
+  }
+
+  .checkmark,
+  .crossmark {
+    font-size: 2.5em;
+  }
+
+  .scoreboard p {
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  #play-btn,
+  #restart-btn {
+    width: 80%;
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  .share-section {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .share-section button,
+  .share-section a {
+    font-size: 0.95em;
+    padding: 8px 16px;
+  }
+
+  .screen {
+    padding: 20px;
+    overflow-y: auto;
   }
 }
