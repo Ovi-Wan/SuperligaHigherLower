@@ -268,29 +268,35 @@ body::before {
   body {
     font-size: 16px;
     overflow-y: auto;
+    background-attachment: fixed;
+    background-position: center top;
+    background-size: cover;
+    backdrop-filter: blur(3px);
   }
 
   .game-layout {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 10px;
     height: auto;
-    padding: 20px 0;
+    padding: 10px 0;
   }
 
   .player-side {
-    width: 90%;
-    max-width: 320px;
+    width: 100%;
+    max-width: 300px;
+    gap: 6px;
   }
 
   .player-side img {
     width: 100%;
     height: auto;
+    max-height: 280px;
   }
 
   .player-side h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     text-align: center;
   }
 
@@ -301,15 +307,16 @@ body::before {
 
   .center-bar {
     width: 90%;
-    padding: 16px;
-    margin-top: 20px;
+    padding: 10px;
+    margin: 0;
+    gap: 10px;
   }
 
   .or-circle {
-    top: -30px;
-    width: 60px;
-    height: 60px;
-    font-size: 1.2em;
+    top: -20px;
+    width: 50px;
+    height: 50px;
+    font-size: 1em;
   }
 
   .checkmark,
@@ -337,6 +344,10 @@ body::before {
   .share-section button,
   .share-section a {
     font-size: 0.95em;
+    padding
+  .share-section button,
+  .share-section a {
+    font-size: 0.95em;
     padding: 8px 16px;
   }
 
@@ -346,4 +357,28 @@ body::before {
   }
 
   #start-screen h1 {
-    font-size: 2em;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #start-screen p {
+    font-size: 1em;
+    text-align: center;
+    margin: 0 10px 20px;
+  }
+
+  #end-screen h2 {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #final-score {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
