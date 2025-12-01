@@ -10,7 +10,7 @@ body, * {
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: url('https://copilot.microsoft.com/th/id/BCO.abbd444d-1165-4c88-ab4e-3b09bba1afdf.png') no-repeat center center;
+  background: url('BCO.abbd444d-1165-4c88-ab4e-3b09bba1afdf.png') no-repeat center center;
   background-size: cover;
   backdrop-filter: blur(6px);
   position: relative;
