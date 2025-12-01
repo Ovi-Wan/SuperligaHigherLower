@@ -1,5 +1,5 @@
 [
-  { "name": "Denis Alibec", "goals": 93, "image": "Denis_Alibec.png" },
+  { "name": "Denis Alibec", "goals": 93, "image": "data/images/Denis_Alibec.png" },
   { "name": "Florinel Coman", "goals": 59, "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Florinel_Coman_training_for_FCSB_-_3_July_2023_%28cropped%29.jpg" },
   { "name": "Daniel Paraschiv", "goals": 25, "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Daniel_Paraschiv_-_Petrolul_Ploiesti_vs_Hermannstadt%2C_14_February_2023.jpg" },
   { "name": "Darius Olaru", "goals": 48, "image": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Darius_Olaru_-_CFR_Cluj_vs_FCSB%2C_17_April_2022_%28cropped%29.jpg" },
